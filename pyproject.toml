@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proxsieve"
+version = "0.1.0"
+description = "Concurrent HTTP, HTTPS, SOCKS4 and SOCKS5 proxy checker that measures reachability, latency and anonymity against an echo endpoint"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Wahaj18" }]
+requires-python = ">=3.9"
+dependencies = ["requests[socks]>=2.31"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+proxsieve = "proxsieve.cli:main"
+
+[tool.setuptools]
+packages = ["proxsieve"]
